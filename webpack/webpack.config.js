@@ -34,19 +34,20 @@ module.exports = {
         type: "asset/resource",
       },
       {
-        test: /\.(?:js|mjs|cjs)$/,
+        test: /\.(js|mjs|cjs)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            targets: "defaults",
-            presets: [
-              ['@babel/preset-env']
-            ],
-            plugins: ['@babel/plugin-proposal-decorators', { version: "2023-11" }]
+            presets: ["@babel/preset-env"],
+            plugins: [
+              ["@babel/plugin-proposal-decorators", { version: "2023-11" }],
+              "@babel/plugin-transform-arrow-functions"
+            ]
           },
         },
-      },  
+      },
     ],
   },
 };
+
